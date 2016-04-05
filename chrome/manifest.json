@@ -14,10 +14,6 @@
     "scripts": ["js/background.js"]
   },
   "web_accessible_resources": [
-    "https://rawgit.com/joshisa/huemix-blopscotch/master/js/hopscotch.min.js",
-    "https://rawgit.com/joshisa/huemix-blopscotch/master/js/tour.js",
-    "https://rawgit.com/joshisa/huemix-blopscotch/master/js/demo.js",
-    "https://rawgit.com/joshisa/huemix-blopscotch/master/js/spark.js"
   ],
   "content_scripts": [
     {
@@ -26,7 +22,7 @@
         "http://*/*",
         "file://*/*"
       ],
-      "css": ["css/hopscotch.min.css"],
+      "css": ["css/hopscotch.css"],
       "js": [
         "js/xhrproxy.js",
         "src/inject/inject.js"
