@@ -22,6 +22,9 @@
         "http://*/*",
         "file://*/*"
       ],
+      "exclude_matches": [
+        "https://hub.jazz.net/*"
+      ],
       "css": ["css/hopscotch.css"],
       "js": [
         "js/xhrproxy.js",
