@@ -1,9 +1,9 @@
 {
-  "name": "Hopscotch Tours for Bluemix",
-  "version": "0.0.1",
+  "name": "Hopscotch Tours for CloudPaks",
+  "version": "0.1.0",
   "manifest_version": 2,
   "description": "This extension was created with curiosity",
-  "homepage_url": "https://hopscotch.mybluemix.net",
+  "homepage_url": "https://example.com",
   "icons": {
     "16": "icons/logo.png",
     "48": "icons/logo.png",
@@ -23,7 +23,6 @@
         "file://*/*"
       ],
       "exclude_matches": [
-        "https://hub.jazz.net/*"
       ],
       "css": ["css/hopscotch.css"],
       "js": [
