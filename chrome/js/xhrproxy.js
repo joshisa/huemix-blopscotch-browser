@@ -28,6 +28,15 @@ proxyXHR.get = function (url) {
       onFailure(msg.data, msg.xhr);
     }
   });
-  port.postMessage(settings);
+
+  ping(port,settings);
   return self;
 };
+
+function ping(port, settings) {
+   if (chrome.runtime.lastError) {
+     console.warn(chrome.runtime.lastError.message);
+   } else {
+     port.postMessage(settings);
+   }
+}

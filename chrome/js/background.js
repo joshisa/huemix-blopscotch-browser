@@ -9,11 +9,16 @@ chrome.extension.onConnect.addListener(function(port) {
     xhr.open(xhrOptions.method || "GET", xhrOptions.url, true);
     xhr.onreadystatechange = function() {
       if (this.readyState == 4) {
+        try {
         port.postMessage({
           status : this.status,
           data   : this.responseText,
           xhr    : this
         });
+        }catch(error){
+          // Let's just eat the error.  This can fail intermittently for many reasons
+          //console.error("postMessage error: " + error);
+        }
       }
     }
     xhr.send();
