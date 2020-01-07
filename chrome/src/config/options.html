@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Options shaping HopScotch for CloudPaks</title>
+  <link rel="stylesheet" href="../../css/category.css">
+</head>
+<body>
+   <h1>HopScotch for CloudPak Options<img src="https://1.cms.s81c.com/sites/default/files/2019-07/logo.png.png" style="display:inline;height:27px;vertical-align:middle"></h1>
+  Enable Autoplay? &nbsp;&nbsp;<input type="checkbox" id="autoplay" checked>
+  <br /><br />
+  Playback Delay: <input type="number" step="1" min="2" id="playBackDelay" value=7 style="width: 4em"> seconds [2 - ?]
+	<br />
+  <br />
+  <div id="hoplets" class="header">
+    <h2 style="margin:5px;font-size:18px">Hoplet Categories of Interest</h2>
+    <br />
+    <input type="text" id="myInput" placeholder="Category of Interest ...">
+    <span id="addBtn" class="addBtn">Add</span>
+  </div>
+
+  <ul id="categories">
+  </ul>
+  <br />
+  <br />
+  <div id="status"></div>
+	<button id="save" style="display:none">Save</button>
+	<br />
+  <button id="restore">Restore Default</button>
+  <script type="text/javascript" src="options.js"></script>
+</body>
+</html>
