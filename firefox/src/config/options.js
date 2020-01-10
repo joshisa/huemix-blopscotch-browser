@@ -1,9 +1,3 @@
-window.browser = (function () {
-  return window.msBrowser ||
-    window.browser ||
-    window.chrome;
-})();
-
 var autoPlayEnabledValue = true;
 var playBackDelayValue = 7;
 var categoryValues = JSON.stringify(['default']);
@@ -14,7 +8,7 @@ function isString (value) {
 }
 
 function loadOptions() {
-  browser.storage.local.get({
+  chrome.storage.sync.get({
     autoPlayEnabled: autoPlayEnabledValue,
     playBackDelay: playBackDelayValue,
     categories: categoryValues,
@@ -39,7 +33,7 @@ function saveOptions() {
 	var autoPlayEnabledValue = document.getElementById('autoplay').checked;
   var playBackDelayValue = document.getElementById('playBackDelay').value;
   var categoryValues = Array.from(document.querySelectorAll('#categories>li:not([style*="display:none"]):not([style*="display: none"])')).map(function(e) { return e.firstChild.nodeValue; });
-  browser.storage.local.set({
+  chrome.storage.sync.set({
     autoPlayEnabled: autoPlayEnabledValue,
     playBackDelay: playBackDelayValue,
     categories: JSON.stringify(categoryValues),
@@ -58,7 +52,7 @@ function restoreOptions() {
   var autoPlayEnabledValue = true;
   var playBackDelayValue = 7;
   var categoryValues = JSON.stringify(['default']);
-  browser.storage.local.set({
+  chrome.storage.sync.set({
     autoPlayEnabled: autoPlayEnabledValue,
     playBackDelay: playBackDelayValue,
     categories: categoryValues,

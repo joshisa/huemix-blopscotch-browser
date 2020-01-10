@@ -1,10 +1,16 @@
 // Credit to SeanJM
 // https://gist.github.com/romannurik/192538
 
+window.browser = (function () {
+  return window.msBrowser ||
+    window.browser ||
+    window.chrome;
+})();
+
 var proxyXHR = {};
 
 proxyXHR.get = function (url) {
-  var port     = chrome.extension.connect({ name: 'XHRProxy_' });
+  var port     = browser.runtime.connect({ name: 'XHRProxy_' });
   var settings = {
     method : 'GET',
     url    : url
@@ -34,8 +40,8 @@ proxyXHR.get = function (url) {
 };
 
 function ping(port, settings) {
-   if (chrome.runtime.lastError) {
-     console.warn(chrome.runtime.lastError.message);
+   if (browser.runtime.lastError) {
+     console.warn(browser.runtime.lastError.message);
    } else {
      port.postMessage(settings);
    }

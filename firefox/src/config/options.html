@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Options shaping HopScotch for CloudPaks</title>
+  <link rel="stylesheet" href="../../css/category.css">
+</head>
+<body>
+  <h1>HopScotch for CloudPak Options<img src="https://1.cms.s81c.com/sites/default/files/2019-07/logo.png.png" style="display:inline;height:27px;vertical-align:middle"></h1>
+  <div id="autoplayContainer">
+    <label for="autoplay">Enable Autoplay?</label> <input type="checkbox" id="autoplay" checked style="display:inline;vertical-align:middle">
+  </div>
+  <div id="playbackContainer">
+    <label for="playback">Playback Delay: </label> <input type="number" step="1" min="2" id="playBackDelay" value=7 style="width: 4em"> seconds [2 - ?]
+  </div>
+  <div id="hoplets" class="header">
+    <h2 style="margin:5px;font-size:18px">Hoplet Categories of Interest</h2>
+    <br />
+    <input type="text" id="myInput" placeholder="Category of Interest ...">
+    <span id="addBtn" class="addBtn">Add</span>
+  </div>
+
+  <ul id="categories">
+  </ul>
+  <br />
+  <br />
+  <div id="status"></div>
+	<button id="save" style="display:none">Save</button>
+	<br />
+  <div id="restoreContainer" style="padding:30px 0px 30px 0px;">
+    <button id="restore" style="border-radius: 18px;-moz-border-radius: 5px;background-color: rgba(102, 153, 204, 1);height: 50px;width:150px;text-align:center;padding: 0 20px;">Restore Default</button>
+  </div>
+  <script type="text/javascript" src="options.js"></script>
+</body>
+</html>
