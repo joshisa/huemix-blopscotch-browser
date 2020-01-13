@@ -1,3 +1,9 @@
+window.browser = (function () {
+  return window.msBrowser ||
+    window.browser ||
+    window.chrome;
+})();
+
 function inject(url) {
   var myPort = browser.runtime.connect({name:"XHRProxy_"});
   var settings = {

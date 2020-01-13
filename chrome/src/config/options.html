@@ -5,10 +5,19 @@
 </head>
 <body>
    <h1>HopScotch for CloudPak Options<img src="https://1.cms.s81c.com/sites/default/files/2019-07/logo.png.png" style="display:inline;height:27px;vertical-align:middle"></h1>
-  Enable Autoplay? &nbsp;&nbsp;<input type="checkbox" id="autoplay" checked>
-  <br /><br />
-  Playback Delay: <input type="number" step="1" min="2" id="playBackDelay" value=7 style="width: 4em"> seconds [2 - ?]
-	<br />
+   <div id="autoplayContainer">
+    <label for="autoplay">Enable Autoplay?</label> <input type="checkbox" id="autoplay" checked>
+  </div>
+  <br/>
+  <div id="playbackContainer">
+    <label for="playback">Playback Delay: </label> <input type="number" step="1" min="2" id="playBackDelay" value=7 style="width: 4em"> seconds [2 - ?]
+  </div>
+  <br/>
+  <div id="toplineFilterContainer" style="display:flex; flex-direction: row;align-items: center">
+    <label style="float:left" for="toplineFilter">Topline Filter [Regex]:</label> 
+    <br/>
+    <span style="display:block;overflow:hidden;padding: 0 4px 0 6px"><input type="TEXT" id="toplineFilter" name="toplineFilter" value="^https?:\/\/icp-console(.*?)" style="width:300px"></span>
+  </div>
   <br />
   <div id="hoplets" class="header">
     <h2 style="margin:5px;font-size:18px">Hoplet Categories of Interest</h2>
