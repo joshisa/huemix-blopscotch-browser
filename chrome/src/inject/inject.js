@@ -15,7 +15,7 @@ browser.storage.local.get({
     toplineFilter: toplineFilterValue,
   }, function(items) {
     // Let's check if the extension has never had its preferences stored (fresh install)
-    if (items.playBackDelay === '') {
+    if ((items.playBackDelay === '') || (items.playBackDelay === undefined)) {
       var autoPlayEnabledValue = true;
       var playBackDelayValue = 7;
       var categoryValues = JSON.stringify(['default']);
@@ -25,8 +25,8 @@ browser.storage.local.get({
         playBackDelay: playBackDelayValue,
         categories: categoryValues,
         toplineFilter: toplineFilterValue,
-      }, function(initItems) {
-        var toplineFilterRegex = new RegExp(initItems.toplineFilter, "i");
+      }, function() {
+        var toplineFilterRegex = new RegExp(toplineFilterValue, "i");
         if (toplineFilterRegex.test(window.location.href)) {
           proxyXHR.get('https://raw.githack.com/joshisa/huemix-blopscotch/master/js/inject.js').onSuccess(function (data) {
               eval(data);
